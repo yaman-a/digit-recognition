@@ -1,7 +1,6 @@
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras import layers, models
-import matplotlib.pyplot as plt
 
 # Load MNIST Dataset
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
@@ -27,6 +26,9 @@ model.fit(x_train, y_train, epochs=5)
 
 test_loss, test_accuracy = model.evaluate(x_test, y_test)
 print(f'Test accuracy: {test_accuracy}')
+
+model.save('mnist_model.h5')
+print("Model saved as mnist_model.h5")
 
 
 
